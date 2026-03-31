@@ -6,7 +6,7 @@
   <title>Dashboard - QR Emergencia Biker</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="app-body">
+<body class="app-body has-bottom-nav">
   <header class="mobile-topbar">
     <div>
       <p class="topbar-label">Panel principal</p>
@@ -15,17 +15,25 @@
     <button id="logoutBtn" class="btn btn-danger">Cerrar sesión</button>
   </header>
 
-  <main class="app-shell page-shell">
+  <main class="app-shell page-shell page-shell-with-nav">
     <section class="dashboard-hero">
       <div class="dashboard-hero-content">
         <span class="dashboard-badge">Cuenta activa</span>
         <h2>Bienvenido</h2>
         <p id="userEmail" class="dashboard-email"></p>
-        <p>Tu cuenta está lista para gestionar perfil, QR y ficha de emergencia.</p>
+        <p>Gestiona tu perfil, genera tu QR y mantén tu ficha lista para cualquier emergencia.</p>
       </div>
     </section>
 
     <section class="dashboard-grid">
+      <a class="feature-card active-feature" href="dashboard.html">
+        <div class="feature-icon">🏠</div>
+        <div>
+          <h3>Inicio</h3>
+          <p>Resumen general de tu cuenta.</p>
+        </div>
+      </a>
+
       <a class="feature-card" href="perfil.html">
         <div class="feature-icon">👤</div>
         <div>
@@ -43,6 +51,21 @@
       </a>
     </section>
   </main>
+
+  <nav class="bottom-nav">
+    <a href="dashboard.html" class="bottom-nav-item active">
+      <span class="bottom-nav-icon">🏠</span>
+      <span class="bottom-nav-label">Inicio</span>
+    </a>
+    <a href="perfil.html" class="bottom-nav-item">
+      <span class="bottom-nav-icon">👤</span>
+      <span class="bottom-nav-label">Perfil</span>
+    </a>
+    <a href="qr.html" class="bottom-nav-item">
+      <span class="bottom-nav-icon">🔳</span>
+      <span class="bottom-nav-label">QR</span>
+    </a>
+  </nav>
 
   <script type="module" src="js/auth.js"></script>
 </body>

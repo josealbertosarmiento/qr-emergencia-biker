@@ -6,7 +6,7 @@
   <title>Mi QR - QR Emergencia Biker</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="app-body">
+<body class="app-body has-bottom-nav">
   <header class="mobile-topbar">
     <div>
       <p class="topbar-label">Código QR</p>
@@ -15,7 +15,7 @@
     <button id="logoutBtn" class="btn btn-danger">Cerrar sesión</button>
   </header>
 
-  <main class="app-shell page-shell">
+  <main class="app-shell page-shell page-shell-with-nav">
     <section class="page-card">
       <div class="section-head">
         <div>
@@ -45,12 +45,26 @@
 
       <div class="buttons-column section-actions">
         <button id="downloadQrBtn" class="btn">Descargar QR</button>
-        <a class="btn btn-secondary" href="dashboard.html">Volver al panel</a>
       </div>
 
       <p id="qrMessage" class="message"></p>
     </section>
   </main>
+
+  <nav class="bottom-nav">
+    <a href="dashboard.html" class="bottom-nav-item">
+      <span class="bottom-nav-icon">🏠</span>
+      <span class="bottom-nav-label">Inicio</span>
+    </a>
+    <a href="perfil.html" class="bottom-nav-item">
+      <span class="bottom-nav-icon">👤</span>
+      <span class="bottom-nav-label">Perfil</span>
+    </a>
+    <a href="qr.html" class="bottom-nav-item active">
+      <span class="bottom-nav-icon">🔳</span>
+      <span class="bottom-nav-label">QR</span>
+    </a>
+  </nav>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script type="module" src="js/auth.js"></script>
