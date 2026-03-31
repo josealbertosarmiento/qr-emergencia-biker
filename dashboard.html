@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - QR Emergencia Biker</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Panel del usuario</h1>
+    <button id="logoutBtn" class="btn btn-danger">Cerrar sesión</button>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h2>Bienvenido</h2>
+      <p id="userEmail"></p>
+      <p>Tu cuenta ya está activa y lista para configurar tu perfil.</p>
+
+      <div class="buttons-column">
+        <a class="btn" href="perfil.html">Completar perfil</a>
+        <a class="btn btn-secondary" href="qr.html">Ver mi QR</a>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>
