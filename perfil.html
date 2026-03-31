@@ -8,18 +8,83 @@
 </head>
 <body>
   <header class="topbar">
-    <h1>Perfil del usuario</h1>
+    <h1>Perfil de emergencia</h1>
     <button id="logoutBtn" class="btn btn-danger">Cerrar sesión</button>
   </header>
 
   <main class="container">
     <div class="card">
-      <h2>Perfil de emergencia</h2>
-      <p>En el siguiente paso pondremos aquí el formulario completo.</p>
-      <a class="btn" href="dashboard.html">Volver al panel</a>
+      <h2>Completa tu información</h2>
+
+      <form id="perfilForm">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" required />
+        </div>
+
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" required />
+        </div>
+
+        <div class="form-group">
+          <label for="cedula">Cédula</label>
+          <input type="text" id="cedula" required />
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="text" id="telefono" required />
+        </div>
+
+        <div class="form-group">
+          <label for="contactoEmergencia">Nombre del contacto de emergencia</label>
+          <input type="text" id="contactoEmergencia" required />
+        </div>
+
+        <div class="form-group">
+          <label for="telefonoEmergencia">Teléfono de emergencia</label>
+          <input type="text" id="telefonoEmergencia" required />
+        </div>
+
+        <div class="form-group">
+          <label for="agrupacionBiker">Agrupación Biker</label>
+          <input type="text" id="agrupacionBiker" />
+        </div>
+
+        <div class="form-group">
+          <label for="direccion">Dirección</label>
+          <input type="text" id="direccion" required />
+        </div>
+
+        <div class="form-group">
+          <label for="tipoSangre">Tipo de sangre</label>
+          <input type="text" id="tipoSangre" placeholder="Ej: O+" />
+        </div>
+
+        <div class="form-group">
+          <label for="alergias">Alergias</label>
+          <input type="text" id="alergias" placeholder="Ej: Penicilina" />
+        </div>
+
+        <div class="form-group">
+          <label for="observacionesMedicas">Observaciones médicas</label>
+          <input type="text" id="observacionesMedicas" placeholder="Ej: Hipertenso, diabético, etc." />
+        </div>
+
+        <button type="submit" class="btn">Guardar perfil</button>
+      </form>
+
+      <p id="perfilMessage" class="message"></p>
+
+      <div class="buttons-column" style="margin-top: 16px;">
+        <a class="btn btn-secondary" href="dashboard.html">Volver al panel</a>
+        <a class="btn" href="qr.html">Ir a mi QR</a>
+      </div>
     </div>
   </main>
 
   <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/perfil.js"></script>
 </body>
 </html>
