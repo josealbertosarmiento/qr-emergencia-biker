@@ -14,12 +14,28 @@
 
   <main class="container">
     <div class="card">
-      <h2>QR del usuario</h2>
-      <p>En el siguiente paso mostraremos aquí el código QR único.</p>
-      <a class="btn" href="dashboard.html">Volver al panel</a>
+      <h2>Tu QR de emergencia</h2>
+      <p>Descárgalo e imprímelo para colocarlo en tu casco, moto o carnet.</p>
+
+      <div id="qrCard" class="qr-card">
+        <div id="qrcode"></div>
+      </div>
+
+      <p><strong>ID QR:</strong> <span id="qrIdText">Cargando...</span></p>
+      <p class="small-text"><strong>Enlace público:</strong></p>
+      <p id="qrUrlText" class="small-text url-box">Cargando...</p>
+
+      <div class="buttons-column">
+        <button id="downloadQrBtn" class="btn">Descargar QR</button>
+        <a class="btn btn-secondary" href="dashboard.html">Volver al panel</a>
+      </div>
+
+      <p id="qrMessage" class="message"></p>
     </div>
   </main>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/qr.js"></script>
 </body>
 </html>
