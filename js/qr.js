@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       new QRCode(qrContainer, {
         text: publicUrl,
-        width: 240,
-        height: 240
+        width: 200,
+        height: 200
       });
 
       qrMessage.textContent = "QR generado correctamente.";
@@ -64,63 +64,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function descargarQR(qrId) {
   const qrContainer = document.getElementById("qrcode");
-  const qrCanvas = qrContainer.querySelector("canvas");
-  const qrImage = qrContainer.querySelector("img");
+  const originalCanvas = qrContainer.querySelector("canvas");
   const qrMessage = document.getElementById("qrMessage");
 
-  if (qrCanvas) {
-    qrCanvas.toBlob((blob) => {
-      if (!blob) {
-        qrMessage.textContent = "No se pudo generar la imagen del QR.";
-        qrMessage.className = "message error";
-        return;
-      }
-
-      const blobUrl = URL.createObjectURL(blob);
-      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-      if (isMobile) {
-        window.open(blobUrl, "_blank");
-        qrMessage.textContent = "Se abrió la imagen del QR. Desde allí puedes mantener pulsado y guardar.";
-        qrMessage.className = "message success";
-      } else {
-        const link = document.createElement("a");
-        link.href = blobUrl;
-        link.download = `QR-${qrId}.png`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        qrMessage.textContent = "QR descargado correctamente.";
-        qrMessage.className = "message success";
-      }
-
-      setTimeout(() => URL.revokeObjectURL(blobUrl), 10000);
-    }, "image/png");
-
+  if (!originalCanvas) {
+    qrMessage.textContent = "No se encontró el canvas del QR.";
+    qrMessage.className = "message error";
     return;
   }
 
-  if (qrImage) {
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const margin = 40; // espacio blanco real alrededor
+  const finalSize = originalCanvas.width + margin * 2;
+
+  const exportCanvas = document.createElement("canvas");
+  exportCanvas.width = finalSize;
+  exportCanvas.height = finalSize;
+
+  const ctx = exportCanvas.getContext("2d");
+
+  // fondo blanco completo
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, finalSize, finalSize);
+
+  // dibujar QR centrado
+  ctx.drawImage(originalCanvas, margin, margin);
+
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  exportCanvas.toBlob((blob) => {
+    if (!blob) {
+      qrMessage.textContent = "No se pudo generar la imagen del QR.";
+      qrMessage.className = "message error";
+      return;
+    }
+
+    const blobUrl = URL.createObjectURL(blob);
 
     if (isMobile) {
-      window.open(qrImage.src, "_blank");
-      qrMessage.textContent = "Se abrió la imagen del QR. Desde allí puedes mantener pulsado y guardar.";
+      window.open(blobUrl, "_blank");
+      qrMessage.textContent = "Se abrió la imagen del QR con borde blanco. Desde allí puedes guardar la imagen.";
       qrMessage.className = "message success";
     } else {
       const link = document.createElement("a");
-      link.href = qrImage.src;
+      link.href = blobUrl;
       link.download = `QR-${qrId}.png`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+
       qrMessage.textContent = "QR descargado correctamente.";
       qrMessage.className = "message success";
     }
 
-    return;
-  }
-
-  qrMessage.textContent = "No se pudo encontrar la imagen del QR.";
-  qrMessage.className = "message error";
+    setTimeout(() => URL.revokeObjectURL(blobUrl), 10000);
+  }, "image/png");
 }
