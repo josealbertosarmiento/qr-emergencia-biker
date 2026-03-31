@@ -1020,3 +1020,94 @@ input:focus {
   height: 4px;
   border-radius: 50%;
 }
+
+.mobile-topbar-clean {
+  padding-bottom: 6px;
+}
+
+.bottom-nav-4 {
+  grid-template-columns: repeat(4, 1fr);
+  width: min(96%, 620px);
+}
+
+.bottom-nav-item-button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.bottom-nav-icon-svg,
+.feature-icon-svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-nav-icon-svg svg,
+.feature-icon-svg svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.feature-icon-svg {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: rgba(59, 130, 246, 0.1);
+  color: #93c5fd;
+  flex-shrink: 0;
+}
+
+.feature-icon-svg svg {
+  width: 20px;
+  height: 20px;
+}
+
+.bottom-nav-item {
+  min-height: 62px;
+}
+
+.bottom-nav-item.active {
+  color: #ffffff;
+}
+
+.bottom-nav-item:not(.active) {
+  color: #cbd5e1;
+}
+
+.bottom-nav-item-logout {
+  color: #fca5a5;
+}
+
+.bottom-nav-item-logout.active {
+  color: #fecaca;
+}
+
+.bottom-nav-item-logout .bottom-nav-icon-svg svg {
+  stroke-width: 1.9;
+}
+
+@media (max-width: 640px) {
+  .bottom-nav-4 {
+    width: min(96%, 100%);
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .bottom-nav-label {
+    font-size: 0.74rem;
+  }
+
+  .bottom-nav-icon-svg svg {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -7,12 +7,11 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body class="app-body has-bottom-nav">
-  <header class="mobile-topbar">
+  <header class="mobile-topbar mobile-topbar-clean">
     <div>
       <p class="topbar-label">Código QR</p>
       <h1>Mi QR de emergencia</h1>
     </div>
-    <button id="logoutBtn" class="btn btn-danger">Cerrar sesión</button>
   </header>
 
   <main class="app-shell page-shell page-shell-with-nav">
@@ -51,19 +50,46 @@
     </section>
   </main>
 
-  <nav class="bottom-nav">
+  <nav class="bottom-nav bottom-nav-4">
     <a href="dashboard.html" class="bottom-nav-item">
-      <span class="bottom-nav-icon">🏠</span>
+      <span class="bottom-nav-icon-svg">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/>
+        </svg>
+      </span>
       <span class="bottom-nav-label">Inicio</span>
     </a>
+
     <a href="perfil.html" class="bottom-nav-item">
-      <span class="bottom-nav-icon">👤</span>
+      <span class="bottom-nav-icon-svg">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4.5 20a7.5 7.5 0 0 1 15 0"/>
+        </svg>
+      </span>
       <span class="bottom-nav-label">Perfil</span>
     </a>
+
     <a href="qr.html" class="bottom-nav-item active">
-      <span class="bottom-nav-icon">🔳</span>
+      <span class="bottom-nav-icon-svg">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/>
+          <path d="M15 15h2v2h-2zM17 17h3v3h-3zM15 19h2v1h-2zM19 14h1v2h-1z"/>
+        </svg>
+      </span>
       <span class="bottom-nav-label">QR</span>
     </a>
+
+    <button id="logoutBtn" class="bottom-nav-item bottom-nav-item-button bottom-nav-item-logout" type="button">
+      <span class="bottom-nav-icon-svg">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4"/>
+          <path d="M13 8l4 4-4 4"/>
+          <path d="M8 12h9"/>
+        </svg>
+      </span>
+      <span class="bottom-nav-label">Salir</span>
+    </button>
   </nav>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
