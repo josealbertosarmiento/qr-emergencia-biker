@@ -4,6 +4,7 @@ import {
   doc,
   getDoc,
   updateDoc,
+  setDoc,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
 
@@ -82,6 +83,23 @@ document.addEventListener("DOMContentLoaded", () => {
           observacionesMedicas,
           qrId,
           perfilCompleto: true,
+          actualizadoEn: serverTimestamp()
+        });
+
+        await setDoc(doc(db, "publicProfiles", qrId), {
+          nombre,
+          apellido,
+          cedula,
+          telefono,
+          contactoEmergencia,
+          telefonoEmergencia,
+          agrupacionBiker,
+          direccion,
+          tipoSangre,
+          alergias,
+          observacionesMedicas,
+          qrId,
+          visible: true,
           actualizadoEn: serverTimestamp()
         });
 

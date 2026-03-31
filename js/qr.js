@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       new QRCode(qrContainer, {
         text: publicUrl,
-        width: 220,
-        height: 220
+        width: 240,
+        height: 240
       });
 
       qrMessage.textContent = "QR generado correctamente.";
@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
       downloadQrBtn.addEventListener("click", () => {
         descargarQR(data.qrId);
       });
-
     } catch (error) {
       console.error(error);
       qrMessage.textContent = "Ocurrió un error al generar el QR.";

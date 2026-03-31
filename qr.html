@@ -15,10 +15,12 @@
   <main class="container">
     <div class="card">
       <h2>Tu QR de emergencia</h2>
-      <p>Descárgalo e imprímelo para colocarlo en tu casco, moto o carnet.</p>
+      <p>Descárgalo e imprímelo. Déjale borde blanco suficiente para que escanee bien.</p>
 
-      <div id="qrCard" class="qr-card">
-        <div id="qrcode"></div>
+      <div id="qrCard" class="qr-card clean-qr-card">
+        <div class="qr-inner-frame">
+          <div id="qrcode"></div>
+        </div>
       </div>
 
       <p><strong>ID QR:</strong> <span id="qrIdText">Cargando...</span></p>
