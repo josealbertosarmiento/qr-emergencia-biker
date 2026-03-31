@@ -613,7 +613,8 @@ input:focus {
 }
 
 .splash-page {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .splash-screen {
@@ -696,6 +697,7 @@ input:focus {
 .landing-show {
   opacity: 1;
   transform: translateY(0);
+  pointer-events: auto;
   transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
@@ -889,4 +891,132 @@ input:focus {
   .preview-screen {
     min-height: 420px;
   }
+}
+
+.center-shell {
+  min-height: 100vh;
+}
+
+.landing-card {
+  margin: 24px 0;
+}
+
+@media (max-width: 640px) {
+  .landing-card {
+    margin: 20px 0 32px;
+  }
+}
+
+.preview-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* usuario */
+.preview-icon-user::before,
+.preview-icon-user::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #93c5fd;
+}
+
+.preview-icon-user::before {
+  top: 1px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.preview-icon-user::after {
+  bottom: 1px;
+  width: 16px;
+  height: 9px;
+  border-radius: 9px 9px 6px 6px;
+}
+
+/* qr */
+.preview-icon-qr {
+  border: 2px solid #93c5fd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.preview-icon-qr::before,
+.preview-icon-qr::after {
+  content: "";
+  position: absolute;
+  background: #93c5fd;
+}
+
+.preview-icon-qr::before {
+  top: 4px;
+  left: 4px;
+  width: 5px;
+  height: 5px;
+}
+
+.preview-icon-qr::after {
+  right: 4px;
+  bottom: 4px;
+  width: 5px;
+  height: 5px;
+}
+
+/* alerta */
+.preview-icon-alert::before,
+.preview-icon-alert::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #93c5fd;
+}
+
+.preview-icon-alert::before {
+  top: 2px;
+  width: 4px;
+  height: 14px;
+  border-radius: 4px;
+}
+
+.preview-icon-alert::after {
+  bottom: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+/* móvil */
+.preview-icon-mobile {
+  border: 2px solid #93c5fd;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.preview-icon-mobile::before,
+.preview-icon-mobile::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #93c5fd;
+}
+
+.preview-icon-mobile::before {
+  top: 2px;
+  width: 8px;
+  height: 2px;
+  border-radius: 2px;
+}
+
+.preview-icon-mobile::after {
+  bottom: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
 }

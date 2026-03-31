@@ -41,19 +41,19 @@
 
             <div class="preview-grid">
               <div class="preview-card">
-                <span class="preview-icon">👤</span>
+                <span class="preview-icon preview-icon-user"></span>
                 <p>Perfil</p>
               </div>
               <div class="preview-card">
-                <span class="preview-icon">🔳</span>
+                <span class="preview-icon preview-icon-qr"></span>
                 <p>Mi QR</p>
               </div>
               <div class="preview-card">
-                <span class="preview-icon">🚑</span>
+                <span class="preview-icon preview-icon-alert"></span>
                 <p>Acceso rápido</p>
               </div>
               <div class="preview-card">
-                <span class="preview-icon">📱</span>
+                <span class="preview-icon preview-icon-mobile"></span>
                 <p>Modo app</p>
               </div>
             </div>
@@ -80,6 +80,7 @@
           splash.style.display = "none";
           landing.classList.remove("landing-hidden");
           landing.classList.add("landing-show");
+          document.body.style.overflowY = "auto";
         }, 500);
       }, 1800);
     });
