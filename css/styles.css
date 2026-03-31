@@ -129,3 +129,27 @@ input:focus {
   align-items: center;
   gap: 12px;
 }
+
+.qr-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  min-height: 280px;
+}
+
+.small-text {
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.url-box {
+  background: #111827;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  padding: 12px;
+  color: #d1d5db;
+}
