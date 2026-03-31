@@ -6,20 +6,22 @@
   <title>Login - QR Emergencia Biker</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
-  <main class="container center">
-    <div class="card">
-      <h2>Iniciar sesión</h2>
+<body class="app-body">
+  <main class="app-shell center-shell">
+    <section class="auth-card">
+      <div class="screen-chip">Acceso</div>
+      <h2 class="screen-title">Iniciar sesión</h2>
+      <p class="screen-subtitle">Accede a tu perfil y administra tu QR de emergencia.</p>
 
       <form id="loginForm">
         <div class="form-group">
           <label for="loginEmail">Correo electrónico</label>
-          <input type="email" id="loginEmail" required />
+          <input type="email" id="loginEmail" placeholder="correo@ejemplo.com" required />
         </div>
 
         <div class="form-group">
           <label for="loginPassword">Contraseña</label>
-          <input type="password" id="loginPassword" required />
+          <input type="password" id="loginPassword" placeholder="••••••••" required />
         </div>
 
         <button type="submit" class="btn">Entrar</button>
@@ -28,9 +30,9 @@
       <p id="loginMessage" class="message"></p>
 
       <div class="extra-links">
-        <a href="registro.html">Crear cuenta</a>
+        <a href="registro.html">¿Aún no tienes cuenta? Crear cuenta</a>
       </div>
-    </div>
+    </section>
   </main>
 
   <script type="module" src="js/auth.js"></script>

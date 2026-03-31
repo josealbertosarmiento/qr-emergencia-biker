@@ -6,25 +6,27 @@
   <title>Registro - QR Emergencia Biker</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
-  <main class="container center">
-    <div class="card">
-      <h2>Crear cuenta</h2>
+<body class="app-body">
+  <main class="app-shell center-shell">
+    <section class="auth-card">
+      <div class="screen-chip">Registro</div>
+      <h2 class="screen-title">Crear cuenta</h2>
+      <p class="screen-subtitle">Empieza configurando tu acceso seguro.</p>
 
       <form id="registerForm">
         <div class="form-group">
           <label for="registerEmail">Correo electrónico</label>
-          <input type="email" id="registerEmail" required />
+          <input type="email" id="registerEmail" placeholder="correo@ejemplo.com" required />
         </div>
 
         <div class="form-group">
           <label for="registerPassword">Contraseña</label>
-          <input type="password" id="registerPassword" required />
+          <input type="password" id="registerPassword" placeholder="Mínimo 6 caracteres" required />
         </div>
 
         <div class="form-group">
           <label for="registerConfirmPassword">Confirmar contraseña</label>
-          <input type="password" id="registerConfirmPassword" required />
+          <input type="password" id="registerConfirmPassword" placeholder="Repite la contraseña" required />
         </div>
 
         <button type="submit" class="btn">Registrarme</button>
@@ -35,7 +37,7 @@
       <div class="extra-links">
         <a href="login.html">Ya tengo cuenta</a>
       </div>
-    </div>
+    </section>
   </main>
 
   <script type="module" src="js/auth.js"></script>

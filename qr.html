@@ -6,16 +6,24 @@
   <title>Mi QR - QR Emergencia Biker</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
-  <header class="topbar">
-    <h1>Mi Código QR</h1>
+<body class="app-body">
+  <header class="mobile-topbar">
+    <div>
+      <p class="topbar-label">Código QR</p>
+      <h1>Mi QR de emergencia</h1>
+    </div>
     <button id="logoutBtn" class="btn btn-danger">Cerrar sesión</button>
   </header>
 
-  <main class="container">
-    <div class="card">
-      <h2>Tu QR de emergencia</h2>
-      <p>Descárgalo e imprímelo. Déjale borde blanco suficiente para que escanee bien.</p>
+  <main class="app-shell page-shell">
+    <section class="page-card">
+      <div class="section-head">
+        <div>
+          <span class="screen-chip">Acceso rápido</span>
+          <h2 class="screen-title">Tu código QR</h2>
+          <p class="screen-subtitle">Descárgalo e imprímelo para casco, carnet o moto.</p>
+        </div>
+      </div>
 
       <div id="qrCard" class="qr-card clean-qr-card">
         <div class="qr-inner-frame">
@@ -23,17 +31,25 @@
         </div>
       </div>
 
-      <p><strong>ID QR:</strong> <span id="qrIdText">Cargando...</span></p>
-      <p class="small-text"><strong>Enlace público:</strong></p>
-      <p id="qrUrlText" class="small-text url-box">Cargando...</p>
+      <div class="info-stack">
+        <div class="info-item">
+          <span class="info-label">ID QR</span>
+          <span id="qrIdText" class="info-value">Cargando...</span>
+        </div>
 
-      <div class="buttons-column">
+        <div class="info-item">
+          <span class="info-label">Enlace público</span>
+          <span id="qrUrlText" class="info-value url-box">Cargando...</span>
+        </div>
+      </div>
+
+      <div class="buttons-column section-actions">
         <button id="downloadQrBtn" class="btn">Descargar QR</button>
         <a class="btn btn-secondary" href="dashboard.html">Volver al panel</a>
       </div>
 
       <p id="qrMessage" class="message"></p>
-    </div>
+    </section>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
