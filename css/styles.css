@@ -1111,3 +1111,35 @@ input:focus {
     height: 20px;
   }
 }
+
+.floating-label input {
+  width: 100%;
+  min-height: 50px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.floating-label input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.floating-label input:focus::placeholder {
+  color: #cbd5e1;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

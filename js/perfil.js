@@ -3,7 +3,6 @@ import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.11.0/f
 import {
   doc,
   getDoc,
-  updateDoc,
   setDoc,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
@@ -69,7 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
           qrId = currentData.qrId;
         }
 
-        await updateDoc(userRef, {
+        await setDoc(userRef, {
+          email: user.email || currentData.email || "",
           nombre,
           apellido,
           cedula,
@@ -83,8 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
           observacionesMedicas,
           qrId,
           perfilCompleto: true,
-          actualizadoEn: serverTimestamp()
-        });
+          actualizadoEn: serverTimestamp(),
+          creadoEn: currentData.creadoEn || serverTimestamp()
+        }, { merge: true });
 
         await setDoc(doc(db, "publicProfiles", qrId), {
           nombre,
@@ -101,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
           qrId,
           visible: true,
           actualizadoEn: serverTimestamp()
-        });
+        }, { merge: true });
 
         perfilMessage.textContent = "Perfil guardado correctamente.";
         perfilMessage.className = "message success";
